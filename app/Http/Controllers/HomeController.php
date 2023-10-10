@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CreateNewOrder;
 use App\Mail\OrderMail;
 use App\Models\Category;
 use App\Models\Order;
@@ -9,6 +10,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
+
 
 class HomeController extends Controller
 {
@@ -138,13 +141,52 @@ class HomeController extends Controller
             $product = Product::find($item->id);
             $product->update(["qty"=>$product->qty- $item->buy_qty]);
         }
+
         // clear cart
 //        session()->forget("cart");
-        //send email
-        Mail::to($request->get("email"))
-//            ->cc("mail nhan vien")
-//            ->bcc("mail quan ly")
-            ->send(new OrderMail($order));
+        event(new CreateNewOrder(($order)));
+
+        //Thanh toan paypal
+        if($order->payment_method == "Paypal"){
+            $provider = new PayPalClient;
+            $provider->setApiCredentials(config('paypal'));
+            $paypalToken = $provider->getAccessToken();
+
+            $response = $provider->createOrder([
+                "intent" => "CAPTURE",
+                "application_context" => [
+                    "return_url" => url("paypal-success",['order'=>$order]),
+                    "cancel_url" => url("paypal-cancel",['order'=>$order]),
+                ],
+                "purchase_units" => [
+                    0 => [
+                        "amount" => [
+                            "currency_code" => "USD",
+                            "value" => number_format($order->grand_total,2,".","") // 1234.45
+                        ]
+                    ]
+                ]
+            ]);
+
+            if (isset($response['id']) && $response['id'] != null) {
+
+                // redirect to approve href
+                foreach ($response['links'] as $links) {
+                    if ($links['rel'] == 'approve') {
+                        return redirect()->away($links['href']);
+                    }
+                }
+
+                return redirect()
+                    ->back()
+                    ->with('error', 'Something went wrong.');
+
+            } else {
+                return redirect()
+                    ->back()
+                    ->with('error', $response['message'] ?? 'Something went wrong.');
+            }
+        }
         return redirect()->to("thank-you/$order->id");
     }
     public function thankYou(Order $order)
@@ -155,14 +197,19 @@ class HomeController extends Controller
 //            ->select("products.id","products.name","products.thumbnail","order_products.price","order_products.qty")
 //            ->get();
 
-
         return view("pages.thankyou",compact("order"));
     }
 
-    public function homeAdmin()
+    public function paypalSuccess(Order $order)
     {
-        $order = DB::table("orders")->count();
-        return view("admin.pages.home",compact("order"));
+        $order->update([
+            "is_paid"=>true,
+            "status" => Order::CONFIRMED
+        ]); // cap nhat trang thai da tra tien
+        return redirect()->to("thank-you/$order->id");
     }
-
+    public function paypalCancel(Order $order)
+    {
+        return redirect()->to("thank-you/$order->id");
+    }
 }

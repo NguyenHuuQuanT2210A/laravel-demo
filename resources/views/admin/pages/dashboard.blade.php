@@ -7,7 +7,7 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>{{ $order }}</h3>
+                        <h3>150</h3>
 
                         <p>New Orders</p>
                     </div>
@@ -196,8 +196,7 @@
                             <ul class="contacts-list">
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user1-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -212,8 +211,7 @@
                                 <!-- End Contact Item -->
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user7-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -228,8 +226,7 @@
                                 <!-- End Contact Item -->
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user3-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -244,8 +241,7 @@
                                 <!-- End Contact Item -->
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user5-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -260,8 +256,7 @@
                                 <!-- End Contact Item -->
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user6-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -276,8 +271,7 @@
                                 <!-- End Contact Item -->
                                 <li>
                                     <a href="#">
-                                        <img class="contacts-list-img" src="dist/img/user8-128x128.jpg"
-                                             alt="User Avatar">
+                                        <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
 
                                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -338,7 +332,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
                                 <!-- checkbox -->
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo1" id="todoCheck1">
                                     <label for="todoCheck1"></label>
                                 </div>
@@ -357,7 +351,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
                                     <label for="todoCheck2"></label>
                                 </div>
@@ -373,7 +367,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo3" id="todoCheck3">
                                     <label for="todoCheck3"></label>
                                 </div>
@@ -389,7 +383,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo4" id="todoCheck4">
                                     <label for="todoCheck4"></label>
                                 </div>
@@ -405,7 +399,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo5" id="todoCheck5">
                                     <label for="todoCheck5"></label>
                                 </div>
@@ -421,7 +415,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                <div class="icheck-primary d-inline ml-2">
+                                <div  class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo6" id="todoCheck6">
                                     <label for="todoCheck6"></label>
                                 </div>
@@ -436,8 +430,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
-                        <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item
-                        </button>
+                        <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -458,8 +451,7 @@
                             <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
                                 <i class="far fa-calendar-alt"></i>
                             </button>
-                            <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse"
-                                    title="Collapse">
+                            <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
                                 <i class="fas fa-minus"></i>
                             </button>
                         </div>
@@ -510,31 +502,27 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <canvas class="chart" id="line-chart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer bg-transparent">
                         <div class="row">
                             <div class="col-4 text-center">
-                                <input type="text" class="knob" data-readonly="true" value="20" data-width="60"
-                                       data-height="60"
+                                <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
                                 <div class="text-white">Mail-Orders</div>
                             </div>
                             <!-- ./col -->
                             <div class="col-4 text-center">
-                                <input type="text" class="knob" data-readonly="true" value="50" data-width="60"
-                                       data-height="60"
+                                <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
                                 <div class="text-white">Online</div>
                             </div>
                             <!-- ./col -->
                             <div class="col-4 text-center">
-                                <input type="text" class="knob" data-readonly="true" value="30" data-width="60"
-                                       data-height="60"
+                                <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
                                 <div class="text-white">In-Store</div>
@@ -559,8 +547,7 @@
                         <div class="card-tools">
                             <!-- button with a dropdown -->
                             <div class="btn-group">
-                                <button type="button" class="btn btn-success btn-sm dropdown-toggle"
-                                        data-toggle="dropdown" data-offset="-52">
+                                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
                                     <i class="fas fa-bars"></i>
                                 </button>
                                 <div class="dropdown-menu" role="menu">

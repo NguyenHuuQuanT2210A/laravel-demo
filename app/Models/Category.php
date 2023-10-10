@@ -19,7 +19,7 @@ class Category extends Model
     ];
 
     public function Products(){
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class); // 1 vs nhiều
     }
 
 }

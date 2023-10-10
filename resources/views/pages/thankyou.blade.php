@@ -26,5 +26,8 @@
             @endforeach
             </tbody>
         </table>
+        @if($order->payment_method == "Paypal" && !$order->is_paid)
+            <a href="#" class="btn btn-warning">Thanh toán lại</a>
+        @endif
     </div>
 @endsection

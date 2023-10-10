@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use HasFactory;
+    use SoftDeletes; //trait
     protected $table = "products";
     protected $fillable =
         [
@@ -22,12 +24,13 @@ class Product extends Model
 
     public function Category() //model relationship dua tren co che cua ORM
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class); // belongsTo : nhiều vs 1
     }
 
     public function Orders()
     {
-        return $this->belongsToMany(Order::class,"order_products");
+        return $this->belongsToMany(Order::class,"order_products");//"order_products" la bang trung gian
+        //belongsToMany : nhiều vs nhiều
     }
 
 }

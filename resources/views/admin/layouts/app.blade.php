@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield("title","AdminLTE 3 | Dashboard")</title>
@@ -22,12 +23,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h1 class="m-0">@yield("listname","Dashboard")</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href={{ url("admin/homeadmin") }}>Home</a></li>
+                            <li class="breadcrumb-item active">@yield("listname","Dashboard")</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
